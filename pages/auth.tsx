@@ -26,14 +26,14 @@ export async function getServerSideProps(context: NextPageContext) {
   }
 
   
-  
+
 const Auth = () =>{
     const router = useRouter();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [variant, setVariant] = useState('');
+    const [variant, setVariant] = useState('register');
 
     const toggleVariant = useCallback(
         ()=>{
@@ -111,8 +111,8 @@ const Auth = () =>{
                             />
 
                         </div>
-                        <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
-                            Login
+                        <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                            {variant === 'login' ? 'Sign in' : 'Register'}
                         </button>
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                             <div onClick={() => signIn('google', { callbackUrl: '/profiles' })} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
