@@ -39,7 +39,7 @@ const UserCard : React.FC<UserCardProps> = ({name}) =>{
 }
 const MyPage = () =>{
     const router = useRouter();
-    const { data: currentUser } = useCurrentUser();
+    // const { data: currentUser } = useCurrentUser();
 
     const selectProfile = useCallback(
         ()=>{
@@ -53,7 +53,7 @@ const MyPage = () =>{
           <div className="flex items-center justify-center gap-8 mt-10">
             <div onClick={() => selectProfile()}>
                 {/* currentUser is fetched from the server through an api call which is written in currentUser() funtion which indirectly uses a fetcher which uses axios */}
-              <UserCard name={currentUser?.name} />  
+              <UserCard name={"currentUser?.name"} />  
             </div>
           </div>
         </div>
