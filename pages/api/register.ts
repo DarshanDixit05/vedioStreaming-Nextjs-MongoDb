@@ -9,16 +9,6 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
     if(req.method !== 'POST'){
         return res.status(405).end();
     }
-
-    // console.log(req.body);
-
-    //     const existingUser = await client.user.findUnique({
-    //         where:{
-    //             email : req.body.email
-    //         }
-    //     });
-    // console.log(existingUser);
-    
     
     try {
         const existingUser = await client.user.findUnique({
